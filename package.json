@@ -1,0 +1,15 @@
+{
+  "name": "power_of_one_project",
+  "version": "1.0.0",
+  "description": "Using data and APIs for the Power of One Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Aiden Taylor",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nedb": "^1.8.0"
+  }
+}

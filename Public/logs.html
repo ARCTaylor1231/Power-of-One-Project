@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+  <title>Power of One Project</title>
+
+</head>
+<body>
+
+
+
+  <h1>Diary Entries!</h1>
+
+  <h2> View your past diary entries here!</h2>
+
+  <a href="http://localhost:3000/index.html">Log a Diary Entry</a>
+
+<script>
+ async function getLogs() {
+    const response = await fetch('/api');
+    const data = await response.json();
+    console.log(data);
+
+  for(item of data) {
+  const log = document.createElement('p');
+  const date = new Date(item.timestamp).toLocaleString();
+
+  log.textContent = "Today, on " + date + ", I was in a "
++ item.mood + " mood. I ate " + item.food_eaten + " and did activities like " + item.activities + ".";
+
+  document.body.append(log);
+  }
+}
+
+  getLogs();
+  </script>
+</body>
+</html>

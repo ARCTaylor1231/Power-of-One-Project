@@ -1,0 +1,40 @@
+p {
+  padding: 10px;
+  font-size: 18px;
+}
+
+h1 {
+  color: #0033cc;
+  font-size: 46px;
+}
+
+h2 {
+  font-size: 22px;
+  margin-top: : 20px;
+  margin-bottom: : 20px;
+}
+
+a {
+  display: block;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  margin-left: 10px;
+  font-size: 20px;
+}
+
+.btn {
+  border-radius: 8px;
+  background-color: #4CAF50;
+  color: white;
+  padding: 8px 22px;
+  font-size: 18px;
+  margin-left: 60px;
+  margin-top: 10px;
+}
+
+
+input[type='text'] {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 16px;
+}

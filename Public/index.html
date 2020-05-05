@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <title>Power of One Project</title>
+
+</head>
+<body>
+  <script>
+
+    async function send_data() {
+      const mood_data = await document.getElementById('mood').value;
+      const food_data = await document.getElementById('food').value;
+      const act_data = await document.getElementById('act').value;
+      const data = {
+        mood: mood_data,
+        food_eaten: food_data,
+        activities: act_data
+      }
+      const options = {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      }
+      const response = await fetch('/api', options);
+      const json = await response.json();
+      console.log(json);
+    }
+  </script>
+
+  <h1>Log Your Diary Entries Here!</h1>
+
+  <h2>Write your daily feelings in this journal!</h2>
+
+    <a href="http://localhost:3000/logs.html" id="lin">View Past Diary Entries</a>
+
+<p>
+  <label>Mood</label>
+  <input type = "text" id = "mood" value = "type your mood here!" />
+</p>
+
+<p>
+  <label>Food Eaten</label>
+  <input type = "text" id = "food" value = "type the food you've eaten!" />
+</p>
+
+<p>
+  <label>Activities</label>
+  <input type = "text" id = "act" value = "type your daily activities!" />
+</p>
+
+
+<input type="submit" value="Submit" onclick="send_data()"  class="btn"/>
+
+</body>
+</html>
